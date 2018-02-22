@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BlackErrow Home</title>
+    <meta name="description" content="Learn about me, Eric Blackham. This is a website to showcase my work. ">
+    <meta name="viewport" content="width=device-width, intial-scale=1">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body class = "body">
+<span id="topHome"></span>
+<div class = "navbar" id="nav">
+    <img id ='topLogo' src ="http://blackerrow.com/images/blackErrowLogoS.png" alt ='BlackErrow logo'>
+    <nav>
+        <ul>
+            <li class="nav-item"><a class = "nav-link" href="#topHome">Home</a> </li>
+            <li class="nav-item"><a href="#topPortal" class="nav-link">Assignment Portal</a></li>
+        </ul>
+    </nav>
+</div>
+<main>
+    <div class="sec" id = 'home'>
+        <h2>"Welcome to the home of Eric Blackham's CIT 261 Assignment Portal"</h2>
+        <a href="#topPortal" class="btn link-btn">See Assignments Now!</a>
+    </div>
+    <span id="topPortal"></span>
+    <div class="sec" id="assignment-portal">
+        <h2>Code Topics:</h2>
+
+        <ol id="code-topics-list">
+            <li class="code-topic-item"><button class="btn-primary" onclick="showToggle('numberOne')"> JavaScript - Loops, Conditional Statements, Functions, Variables, Parameters, Arrays, Associative Arrays</button></li>
+            <div id="numberOne" class="hide">
+                <p>By clicking on the title of this code topic, you called a function
+                    that toggles the visibility of this section. Clicking the following
+                    button will call another function which loops through each of the code topics
+                    and shows you which ones have been completed. You will know that a code topic
+                    is completed because it will be outlined in green.
+                    <button class = "btn btn-success" type="button" onclick="completedAssignment()">Show Completed Topics</button> </p>
+
+            </div>
+            <li class="code-topic-item">JavaScript Objects - Object Creation Functions, Inheritance, Properties, Methods, Instantiation</li>
+            <li class="code-topic-item"><button class="btn-primary" onclick="showToggle('numberThree')">JSON Parse, Stringify</button></li>
+            <div id="numberThree" class="hide">
+                <p>See <a href="weather.html">Weather Site</a></p>
+                <p>The weather underground JSON file is being parsed and searched through to pull out specific data. </p>
+            </div>
+            
+            <li class="code-topic-item"><button class="btn-primary" onclick="showToggle('numberFour')"  >AJAX requesting a JSON file</button></li>
+            <div id="numberFour" class="hide">
+                <p>See <a href="weather.html">Weather Site</a></p>
+                <p>The Weather underground is retrieving a JSON file</p>
+            </div>
+
+            <li class="code-topic-item"><button class="btn-primary" onclick="showToggle('numberFive')"> Local Storage API, Storing and Retrieving Simple Data, Arrays, Associative Arrays, and Objects</button></li>
+            <div class="hide" id="numberFive">
+                <p>See <a href="weather.html">Weather Site</a></p>
+                Here you will see usage of the weather underground api, where a user can save their location to the local storage.
+            </div>
+            <li class="code-topic-item">DOM Manipulation Using createElement, appendChild, insertBefore, removeChild, etc.</li>
+            <li class="code-topic-item"><button class = "btn-primary" onclick="showToggle('numberSeven')"> Manipulating CSS Class Properties Using JavaScript</button></li>
+            <div id="numberSeven" class="hide">
+                <p>Some basic Manipulation of CSS using JavaScript was seen in the first code topic example
+                the following buttons show additional instances of CSS manipulation:</p>
+                <button class="btn" onclick="change(1)">Disappear!</button>
+                <p>Refresh to have everything come back! (ctr+shift+r)</p>
+                <button class="btn" onclick="change(2)">red-white-blue</button>
+                <button class="btn" onclick="change(3)">invert</button>
+            </div>
+            <li class="code-topic-item">Creating CSS3 Transitions and Animations in CSS and triggering them with JavaScript</li>
+            <li class="code-topic-item">Standard JavaScript Events Including those for Mobile Devices ( Ex. onTouchBegin, onLoad, etc.) and Animation and Transition Events</li>
+            <li class="code-topic-item">HTML5 Tags - Video, Audio, and Canvas</li>
+            <li class="code-topic-item">Designing, Defining, and Triggering CSS3 Transitions without Custom Libraries</li>
+            <li class="code-topic-item">Designing, Defining, and Triggering CSS3 Transforms without Custom Libraries</li>
+            <li class="code-topic-item">Designing, Defining, and Triggering CSS3 Animations without Custom Libraries</li>
+        </ol>
+    </div>
+
+<div class="sandBox">
+    <h2>Sand Box </h2>
+<div id="transition"></div>
+    font-slider:<br>
+    <div class="slider-container">
+        <input type="range" min="12" max="112" value="16" id="fontSlider" class="slider">
+    </div>
+    <div id="fontBox">
+        Hi, this font will begin to change size while you mess with the font-slider! :)
+
+    </div>
+    <h3>Pure Javascript</h3>
+    <div class='box'></div>
+    <button class='toggleButton' value='play'>Play</button>
+    </div>
+</main>
+<footer id = "footer">
+    <p>&copy; Eric Blackham 2017 || github.com/blackham-eric72 || https://www.linkedin.com/in/erictblackham/
+</footer>
+<script src = js/js.js></script>
+</body>
+</html>
