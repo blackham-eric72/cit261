@@ -1,12 +1,15 @@
 function showToggle(element) {
     var x = document.getElementById(element);
     var f = document.getElementById('footer');
+    var s = document.getElementById('sandbox');
     if (x.className === "show") {
         x.className = "hide";
+        s.style.marginTop = "500px";
     }
     else {
         x.className = "show";
         f.style.marginTop = "200px";
+
     }
 }
 function completedAssignment(){
@@ -207,6 +210,84 @@ function removeThis() {
 function clearLocalStorage(){
     localStorage.clear();
     location.reload();
+}
+
+
+//CANVAS
+var canvas= document.getElementById("myCanvas");
+var ctx = canvas.getContext("2d");
+
+var rightPressed = false;
+var leftPressed = false;
+var upPressed = false;
+var downPressed = false;
+
+var playerX = 100;
+var playerY = 100;
+
+function draw(){
+    ctx.clearRect(0,0, canvas.width, canvas.height);
+
+    drawPlayer();
+
+}
+function drawPlayer(){
+    if(rightPressed){
+        playerX--;
+    }
+    if(leftPressed){
+        playerX++;
+    }
+    if(upPressed){
+        playerY--;
+    }
+    if(downPressed){
+        playerY++;
+    }
+
+    ctx.beginPath();
+    ctx.rect(playerX, playerY, 50,75);
+    ctx.fillStyle = "green";
+    ctx.fill();
+    ctx.closePath();
+
+}
+
+setInterval(draw,10);
+
+// event listener
+
+document.addEventListener("keydown", keyDownHandler, false);
+document.addEventListener("keyup", keyUpHandler, false);
+
+function keyDownHandler(e){
+    if(e.keyCode==37){
+        rightPressed = true;
+    }
+    else if(e.keyCode == 38){
+        upPressed = true
+    }
+    else if(e.keyCode == 39){
+        leftPressed = true
+    }
+    else if(e.keyCode == 40){
+        downPressed = true
+    }
+}
+
+function keyUpHandler(e){
+    if(e.keyCode==37){
+        rightPressed = false;
+    }
+    else if(e.keyCode == 38){
+        upPressed = false;
+    }
+    else if(e.keyCode == 39){
+        leftPressed = false;
+    }
+    else if(e.keyCode == 40){
+        downPressed = false;
+    }
 }
 
 

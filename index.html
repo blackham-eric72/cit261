@@ -89,7 +89,19 @@
             </div>
             <li class="code-topic-item">Creating CSS3 Transitions and Animations in CSS and triggering them with JavaScript</li>
             <li class="code-topic-item">Standard JavaScript Events Including those for Mobile Devices ( Ex. onTouchBegin, onLoad, etc.) and Animation and Transition Events</li>
-            <li class="code-topic-item">HTML5 Tags - Video, Audio, and Canvas</li>
+            <li class="code-topic-item"><button onclick="showToggle('numberTen')" class="btn-primary">HTML5 Tags - Video, 
+                Audio, and Canvas</button></li>
+            <div class="hide" id="numberTen">
+                Video: <br>
+                <video width="80%" height="80%" src="assets/lava.mp4" controls >
+                </video>
+                <br> Audio: <br>
+                <audio src="assets/song.mp3" controls></audio>
+                <br> Canvas: move the block on the canvas using the arrow on your keyboard! <br>
+                <canvas id="myCanvas" width="300" height="300">
+
+                </canvas>
+            </div>
             <li class="code-topic-item" ><button class="btn-primary" onclick="showToggle('numberEleven')">Designing, Defining, and Triggering CSS3 Transitions without Custom Libraries</button></li>
             <div class="hide" id="numberEleven">
                 <p>All of the buttons on this page have been styled using transitions. You will see that they change colors slower than normal. The navigation links also have a transition that causes a border to appear and disappera around them on hover. </p>
@@ -100,7 +112,7 @@
         </ol>
     </div>
 
-<div class="sandBox">
+<div id="sandbox" class="sandBox">
     <h2>Sand Box </h2>
 <div id="transition"></div>
     font-slider:<br>

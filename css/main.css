@@ -133,7 +133,7 @@ nav{
 
 /**********SAND BOX CODE BELOW***************/
 .sandBox{
-    margin-top:200px;
+    margin-top:700px;
     border: 3px solid sandybrown;
 
 }
@@ -232,4 +232,14 @@ footer{
 }
 footer p {
     margin:auto;
+}
+
+/***********  VIDEO STYLE ****************/
+#numberTen video {
+   margin:auto;
+}
+
+/*************CANVAS*****************/
+#myCanvas{
+    background-color:navajowhite;
 }
