@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, intial-scale=1">
     <link rel="stylesheet" href="css/main.css">
 </head>
-<body class = "body">
+<body onload="loadHero()" class = "body">
 <span id="topHome"></span>
 <div class = "navbar" id="nav">
     <img id ='topLogo' src ="http://blackerrow.com/images/blackErrowLogoS.png" alt ='BlackErrow logo'>
@@ -38,7 +38,24 @@
                     <button class = "btn btn-success" type="button" onclick="completedAssignment()">Show Completed Topics</button> </p>
 
             </div>
-            <li class="code-topic-item">JavaScript Objects - Object Creation Functions, Inheritance, Properties, Methods, Instantiation</li>
+            <li class="code-topic-item"><button class ="btn-primary" onclick="showToggle('numberTwo')">JavaScript Objects - Object Creation Functions, Inheritance, Properties, Methods, Instantiation</button></li>
+                <div class="hide" id="numberTwo">
+                    <h3 >Here is an example of JavaScript object functionality:</h3>
+                    <p>There are 3 superheroes defined. Click on the list where you want to see which superhero will appear! You will see all of the properties of that superhero!</p>
+                    <ul id="heroList">
+                       <li id ="super" onclick = "getHero('super', superMan)">Super-Hero 1</li>
+                        <li id="bat" onclick="getHero('bat', batMan)">Super-Hero 2</li>
+                        <li id="spider" onclick="getHero('spider', spiderman)">Super-Hero 3</li>
+                    </ul>
+                    <div id="heroForm">
+                        <p>Want to add your own super-hero?</p>
+                        name: <input type="text" id="newHeroName"><br>
+                        Origin: <input type="text" id="newHeroOrigin"><br>
+                        Super-powers: <input type="text" id="newHeroPowers"><br>
+                        <button onclick="newHero()">Add your hero!</button>
+                    </div>
+                    <button onclick="clearLocalStorage()">Clear Local Storage</button>
+                </div>
             <li class="code-topic-item"><button class="btn-primary" onclick="showToggle('numberThree')">JSON Parse, Stringify</button></li>
             <div id="numberThree" class="hide">
                 <p>See <a href="weather.html">Weather Site</a></p>
@@ -55,8 +72,12 @@
             <div class="hide" id="numberFive">
                 <p>See <a href="weather.html">Weather Site</a></p>
                 Here you will see usage of the weather underground api, where a user can save their location to the local storage.
+                <p>You can see another example of using local Storage under the JavaScript Object topic (#2) </p>
             </div>
-            <li class="code-topic-item">DOM Manipulation Using createElement, appendChild, insertBefore, removeChild, etc.</li>
+            <li class="code-topic-item"><button class="btn-primary" onclick="showToggle('numberSix');showToggle('numberTwo')">DOM Manipulation Using createElement, appendChild, insertBefore, removeChild, etc.</button></li>
+            <div id="numberSix" class="hide">
+                <p>To see the DOM manipulated with createElement, appendChild, insertBefore, and removeChild, look at the JSON object example.</p>
+            </div>
             <li class="code-topic-item"><button class = "btn-primary" onclick="showToggle('numberSeven')"> Manipulating CSS Class Properties Using JavaScript</button></li>
             <div id="numberSeven" class="hide">
                 <p>Some basic Manipulation of CSS using JavaScript was seen in the first code topic example
@@ -69,7 +90,11 @@
             <li class="code-topic-item">Creating CSS3 Transitions and Animations in CSS and triggering them with JavaScript</li>
             <li class="code-topic-item">Standard JavaScript Events Including those for Mobile Devices ( Ex. onTouchBegin, onLoad, etc.) and Animation and Transition Events</li>
             <li class="code-topic-item">HTML5 Tags - Video, Audio, and Canvas</li>
-            <li class="code-topic-item">Designing, Defining, and Triggering CSS3 Transitions without Custom Libraries</li>
+            <li class="code-topic-item" ><button class="btn-primary" onclick="showToggle('numberEleven')">Designing, Defining, and Triggering CSS3 Transitions without Custom Libraries</button></li>
+            <div class="hide" id="numberEleven">
+                <p>All of the buttons on this page have been styled using transitions. You will see that they change colors slower than normal. The navigation links also have a transition that causes a border to appear and disappera around them on hover. </p>
+            </div>
+
             <li class="code-topic-item">Designing, Defining, and Triggering CSS3 Transforms without Custom Libraries</li>
             <li class="code-topic-item">Designing, Defining, and Triggering CSS3 Animations without Custom Libraries</li>
         </ol>
@@ -89,6 +114,17 @@
     <h3>Pure Javascript</h3>
     <div class='box'></div>
     <button class='toggleButton' value='play'>Play</button>
+    <h3>Fibonacci Recursion</h3>
+    <p>Enter which number in the fibonacci sequence you would like to know:</p>
+    <span>ex: "5" will give you the 5th number in the sequence.</span><input type="text" id="fibNum">
+    <button type="button" onclick="fibonacci()"></button>
+    <p id="output"></p>
+
+    <h3>Reverse an array</h3>
+    Array = [1,2,3,4,5,6,7]
+    <button onclick="arrayManipulation()">ARRAY!</button>
+    <button onclick="loopthrough()">LOOPS! There it is!</button>
+    <p id="output2"></p>
     </div>
 </main>
 <footer id = "footer">
