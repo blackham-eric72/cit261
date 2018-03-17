@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, intial-scale=1">
     <link rel="stylesheet" href="css/main.css">
 </head>
-<body onload="loadHero()" class = "body">
+<body onload="loadHero()" class = "body" id="body">
 <span id="topHome"></span>
 <div class = "navbar" id="nav">
     <img id ='topLogo' src ="http://blackerrow.com/images/blackErrowLogoS.png" alt ='BlackErrow logo'>
@@ -20,7 +20,7 @@
 </div>
 <main>
     <div class="sec" id = 'home'>
-        <h2>"Welcome to the home of Eric Blackham's CIT 261 Assignment Portal"</h2>
+        <h2 id ="welcomeText">"Welcome to the home of Eric Blackham's CIT 261 Assignment Portal"</h2>
         <a href="#topPortal" class="btn link-btn">See Assignments Now!</a>
     </div>
     <span id="topPortal"></span>
@@ -87,8 +87,29 @@
                 <button class="btn" onclick="change(2)">red-white-blue</button>
                 <button class="btn" onclick="change(3)">invert</button>
             </div>
-            <li class="code-topic-item">Creating CSS3 Transitions and Animations in CSS and triggering them with JavaScript</li>
-            <li class="code-topic-item">Standard JavaScript Events Including those for Mobile Devices ( Ex. onTouchBegin, onLoad, etc.) and Animation and Transition Events</li>
+            <li class="code-topic-item"><button class="btn-primary" onclick="showToggle('numberEight')">Creating CSS3
+                Transitions and Animations in CSS and triggering them with JavaScript</button></li>
+            <div id="numberEight" class="hide">
+                <h3>Click the play button below to show a CSS transition begin by pressing 'play'</h3>
+                <p>You can also pause it by pressing pause...</p>
+                <div class='box' id="box"></div>
+                <p id="bAlert"></p>
+                <button class='toggleButton' value='play'>Play</button>
+                <h3>Click the rotate button below to show a css animation begin </h3>
+                <div class="box" id="boxOne"></div>
+                <button class="toggleButton" onclick="rotation()">Rotate</button>
+                <p id="rCount"></p>
+            </div>
+            <li class="code-topic-item"><button onclick="showToggle('numberNine')" class="btn-primary">Standard
+                JavaScript Events Including those for Mobile Devices ( Ex. onTouchBegin, onLoad, etc.) and Animation and Transition Events</button></li>
+            <div id="numberNine" class="hide">
+               <p> The onload function is used in Code Topic number two, and is attached to the Body of the HTML document.  </p>
+                <p>To see what happens when you swipe across any part of the page, look at the top of the page where
+                    it says "welcome to the home of Eric Blackham's CIT 261 Assignment Portal", and swipe!.
+                </p>
+                <p>To see usage of transition and animation events, look at code topic number 8 and play the
+                transition and animation!</p>
+            </div>
             <li class="code-topic-item"><button onclick="showToggle('numberTen')" class="btn-primary">HTML5 Tags - Video, 
                 Audio, and Canvas</button></li>
             <div class="hide" id="numberTen">
@@ -104,11 +125,22 @@
             </div>
             <li class="code-topic-item" ><button class="btn-primary" onclick="showToggle('numberEleven')">Designing, Defining, and Triggering CSS3 Transitions without Custom Libraries</button></li>
             <div class="hide" id="numberEleven">
-                <p>All of the buttons on this page have been styled using transitions. You will see that they change colors slower than normal. The navigation links also have a transition that causes a border to appear and disappera around them on hover. </p>
+                <p>All of the buttons on this page have been styled using transitions. You will see that they change colors slower than normal. The navigation links also have a transition that causes a border to appear and disappear
+                    around them on hover. </p>
             </div>
 
-            <li class="code-topic-item">Designing, Defining, and Triggering CSS3 Transforms without Custom Libraries</li>
-            <li class="code-topic-item">Designing, Defining, and Triggering CSS3 Animations without Custom Libraries</li>
+            <li class="code-topic-item"><button class="btn-primary" onclick="showToggle('numberTwelve')">Designing, Defining, and Triggering CSS3 Transforms without Custom Libraries</button></li>
+            <div id="numberTwelve" class="hide">
+                <div id="box2"></div>
+            </div>
+            <li class="code-topic-item"><button class="btn-primary" onclick="showToggle('numberThirteen')">Designing, Defining, and Triggering CSS3 Animations without Custom Libraries</button></li>
+            <div id="numberThirteen" class="hide">
+                <section class="centered">
+                    <div class="animateMe">
+                        <span class="text-1">OHHH YEAHHHH!</span>
+                    </div>
+                </section>
+            </div>
         </ol>
     </div>
 
@@ -123,9 +155,7 @@
         Hi, this font will begin to change size while you mess with the font-slider! :)
 
     </div>
-    <h3>Pure Javascript</h3>
-    <div class='box'></div>
-    <button class='toggleButton' value='play'>Play</button>
+
     <h3>Fibonacci Recursion</h3>
     <p>Enter which number in the fibonacci sequence you would like to know:</p>
     <span>ex: "5" will give you the 5th number in the sequence.</span><input type="text" id="fibNum">

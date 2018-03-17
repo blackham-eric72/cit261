@@ -157,6 +157,30 @@ nav{
     transition: width 5s;
 }
 
+.animate{
+    animation: animateBox 4s ease-in-out infinite alternate forwards;
+    animation-play-state: running;
+}
+#boxOne{
+    width:50px;
+    height:50px;
+    background-color:darkred;
+}
+
+@keyframes animateBox  {
+    0%{ transform: rotate(45deg);
+    }
+    25%{
+        transform: rotate(90deg);
+    }
+    50%{
+        transform: rotate(135deg);
+    }
+    100%{
+        transform: rotate(180deg);
+    }
+}
+
 @-moz-keyframes example {
 from {background-color:red;}
     to {
@@ -243,3 +267,85 @@ footer p {
 #myCanvas{
     background-color:navajowhite;
 }
+
+#box2{
+    height: 30px;
+    width: 30px;
+    transition: 3s;
+    background-color: green;
+}
+#numberTwelve:hover #box2{
+    transform: translate(250px, 10px) rotate(90deg);
+}
+
+/*CUSTOM ANIMATION*/
+.animateMe{
+    /*animation: no-transform 1s .5s cubic-bezier(0,.1,.5,1.5) forwards;*/
+    color: white;
+    /*background: #3991ae;*/
+    font-size: 6rem;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    /*transform: rotateX(-90deg);*/
+}
+.animateMe:before{
+
+    animation: show-background 1s .5s cubic-bezier(0,.9,.3,1) forwards;
+
+    background-color: #3991ae;
+    content: "";
+    position: absolute;
+    top:0;
+    right:0;
+    bottom: 0;
+    left: 0;
+    transform: translate(-110%,95%);
+}
+
+
+.animateMe span{
+    animation: pop-in .5s 1.4s cubic-bezier(0,.8,.4,1.25) forwards;
+    display: inline-block;
+    color: white;
+    transform: scale(1);
+    opacity: 0;
+}
+@keyframes show-background{
+    0%{
+        transform: translate(-110%, 95%);
+    }
+    50%{
+        transform: translate(0, 95%);
+    }
+    100%{
+        transform: none;
+    }
+}
+
+@keyframes pop-in{
+    0%{
+        opacity: 0;
+        transform: scale(.5);
+    }
+    40%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes no-transform{
+    100%{
+        transform: none;
+    }
+}
+
+.centered{
+    width:80%;
+    margin:auto;
+
+}
+

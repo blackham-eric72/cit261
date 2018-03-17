@@ -73,6 +73,14 @@ slider.addEventListener('input', function () {
     box.style.fontSize = size + "px";
     
 });
+//touch events
+var touchIt = document.getElementById('body');
+touchIt.addEventListener("touchmove", function(){
+    document.getElementById('welcomeText').innerHTML = "Can't touch this! .... oh wait... you just did!";
+});
+// function myStuf(){
+//     alert('you just touched it!');
+// }
 
 //Moving Box controlled by JavaScript
 var box = document.getElementsByClassName('box')[0];
@@ -90,6 +98,47 @@ document.getElementsByClassName('toggleButton')[0].onclick = function () {
     }
     
 }
+
+function rotation(){
+    var box1 =  document.getElementById('boxOne');
+box1.classList.add('animate');
+}
+function rotateBox(){
+   var box1 =  document.getElementById('boxOne');
+    if(box1.style.animationPlayState === 'running'){
+       box1.style.animationPlayState = 'paused';
+    }
+    else{
+       box1.style.animationPlayState = 'running';
+    }
+    rCount();
+}
+//animationEvent:-----------------------------------------------
+
+    var box1 =  document.getElementById('boxOne');
+    var countBox = document.getElementById('rCount');
+    var i = 0;
+
+    box1.addEventListener("animationstart", function(){
+        countBox.innerHTML = "Hey, I started!"
+    });
+    box1.addEventListener("animationiteration", repeated);
+
+    function repeated(){
+        countBox.innerHTML = "And now the other way!"
+    }
+//--------------------------------------------------------------
+
+//Transition Event:---------------------------------------------
+
+var b = document.getElementById('box');
+    b.addEventListener("transitionend", function(){
+       var bAlert = document.getElementById('bAlert');
+        bAlert.innerHTML = "Transition Has finished";
+    });
+
+
+
 
 function resetLogo() {
     var box = document.getElementsByClassName('box')[0];
